@@ -1,0 +1,80 @@
+*{
+    margin:0px;
+    font-family: "Space Grotesk","serif";
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    gap:40px;
+}
+h2{
+    font-size: 2em;
+    font-weight:900;
+    background-color: black;
+    color:white;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:15px;
+    background-color: black;
+}
+.container > div{
+    position: relative;
+    width:70px;
+    height:70px;
+    background-color: white;
+}
+.container > div:hover::after{
+    content: "";
+    position: absolute;
+    height:100%;
+    width:100%;
+    top:0px;
+    left:0px;
+    background-color: rgba(0,0,0,0.3);
+}
+.cross,.circle,.draw{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cross .cross-img{
+    background: url(../assets/cross.png) no-repeat center/100%;
+    width: 80%;
+    height: 80%;
+}
+.circle .circle-img{
+    background: url(../assets/circle.png) no-repeat center/100%;
+    width: 90%;
+    height: 90%;
+}
+.shake .cross-img{
+    animation:shake-cross 40ms linear 0s 6 normal none running;
+}
+.shake .circle-img{
+    animation:shake-circle 240ms linear 0s 1 normal none running;
+}
+
+@keyframes shake-cross{
+    from{
+        rotate:-5deg;
+    }
+    to{
+        rotate:5deg;
+    }
+}
+
+@keyframes shake-circle{
+    from{
+        transform:rotateY(0deg);
+    }
+    to{
+        transform:rotateY(180deg);
+    }
+}
