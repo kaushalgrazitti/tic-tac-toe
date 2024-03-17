@@ -17,9 +17,31 @@ h2{
     background-color: black;
     color:white;
 }
+.mode{
+    display: flex;
+    height: 90px;
+    font-size: 2.5em;
+    font-weight: 900;
+    translate: 0px 30px;
+}
+.triple,.quadruple{
+    display: flex;
+    align-items: center;
+    padding:20px;
+}
+.triple:hover,.quadruple:hover{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+.line{
+    width:5px;
+    background-color: black;
+    height: 100%;
+}
 .container{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     gap:15px;
     background-color: black;
 }
@@ -34,9 +56,48 @@ h2{
     position: absolute;
     height:100%;
     width:100%;
-    top:0px;
-    left:0px;
     background-color: rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.box1:hover::after{
+    top: 1px;
+    left: 1px;
+}
+.box2:hover::after{
+    top: 1px;
+}
+.box3:hover::after{
+    top: 1px;
+}
+.box4:hover::after{
+    top: 1px;
+    right: 1px;
+}
+.box5:hover::after{
+    left: 1px;
+}
+.box8:hover::after{
+    right: 1px;
+}
+.box9:hover::after{
+    left: 1px;
+}
+.box12:hover::after{
+    right: 1px;
+}
+.box13:hover::after{
+    bottom: 1px;
+    left: 1px;
+}
+.box14:hover::after{
+    bottom: 1px;
+}
+.box15:hover::after{
+    bottom: 1px;
+}
+.box16:hover::after{
+    bottom: 1px;
+    right: 1px;
 }
 .cross,.circle,.draw{
     display: flex;
@@ -76,5 +137,12 @@ h2{
     }
     to{
         transform:rotateY(180deg);
+    }
+}
+
+@media screen and (max-width:500px) {
+    .mode{
+        font-size:2em;
+        height:80px;
     }
 }
